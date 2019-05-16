@@ -19,10 +19,16 @@ describe('<Dashboard />', () => {
 	});
 });
 
-// describe('gate', () => {
-//     describe('default', () => {
-//         it('defaults to unlocked and open', () => {
+describe('gate', () => {
+	describe('default', () => {
+		it('defaults to unlocked and open', () => {
+			const { getByText } = render(<Dashboard />);
+			getByText(/unlocked/i);
+			getByText(/open/i);
+		});
 
-//         })
-//     })
-// })
+		// it('cannot be closed or opened if locked', () => {
+
+		// })
+	});
+});
